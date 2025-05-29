@@ -2,10 +2,12 @@
 
 App Link:
 
+
 🔍 Overview
 This project provides a user-friendly web application built with Streamlit to estimate real estate prices across major cities and districts in Maharashtra, India. The app allows users to select a city, choose a locality, and input the area of a property in square feet to get an instant price estimate based on pre-defined rates.
 
 The tool is designed to serve prospective home buyers, sellers, and real estate agents by offering a quick, visually appealing, and interactive estimation experience.
+
 
 🎯 Objectives
 Provide an interactive UI for users to estimate real estate property prices.
@@ -15,6 +17,7 @@ Integrate district-wise and locality-wise rate mapping for Maharashtra.
 Display dynamically calculated prices based on user inputs.
 
 Style the app with professional visual themes and clear UI components.
+
 
 🧩 Features
 🌍 District and locality dropdowns for location selection.
@@ -29,10 +32,13 @@ Style the app with professional visual themes and clear UI components.
 
 🪟 Semi-transparent layout to enhance visual appeal.
 
+
+
 🔧 Steps Involved
 
 1. Environment Setup
-2. 2. App Design (Frontend)
+
+ 2. App Design (Frontend)
 Built entirely with Streamlit.
 
 Injected custom CSS using st.markdown() to enhance aesthetics:
@@ -60,12 +66,15 @@ Select locality from corresponding options.
 Enter property size using a slider (300–5000 sqft).
 
 5. Price Calculation
-6. 6. Output Display
+
+ 
+ 6. Output Display
 Shows Rate per sqft
 
 Shows Total estimated property price
 
 Styled with black bold fonts and visibility-enhanced containers.
+
 
 🧪 Example Use Case
 Input	- Value
@@ -75,6 +84,7 @@ Area (sqft) -	1200
 Rate per sqft -	₹13,000
 Estimated Price -	₹15,60,000
 
+
 💾 Future Enhancements
 Connect to a live real estate API or database for dynamic rate updates.
 
@@ -83,6 +93,8 @@ Add visualizations like price comparison across cities.
 Enable CSV uploads for bulk estimation.
 
 Integrate user authentication to save estimates.
+
+
 
 ✅ Conclusion
 The Maharashtra Real Estate Price Estimator project showcases how Streamlit can be used to build powerful and beautiful web applications with minimal code. The app delivers value by enabling instant and intuitive property valuation, helping users make informed decisions.
