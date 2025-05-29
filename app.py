@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Custom styles: Very dark black text, all bold, large font sizes, and highlighted
+# Custom styles: All text bold, very dark black, increased size, styled title
 st.markdown("""
 <style>
 /* Background image */
@@ -10,9 +10,6 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    color: #000000;
-    font-weight: bold;
-    font-size: 20px;
 }
 
 /* App container */
@@ -22,19 +19,22 @@ body {
     border-radius: 12px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /* Title styling */
-h1 {
-    font-size: 3rem;
-    color: #000000;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px #999;
+h1, .stApp h1 {
+    font-size: 3rem !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+    text-shadow: 1px 1px 2px #999 !important;
 }
 
-/* Label text (select, slider, etc.) */
+/* Labels and inputs */
 label, .stSlider label, .stSelectbox label, .stTextInput label {
     color: #000000;
     font-weight: bold;
@@ -57,7 +57,7 @@ label, .stSlider label, .stSelectbox label, .stTextInput label {
     background-color: #e0a800;
 }
 
-/* Output text block */
+/* Output text */
 .stMarkdown > div {
     font-size: 22px;
     font-weight: bold;
@@ -78,46 +78,24 @@ st.title("🏠 Maharashtra Real Estate Price Estimator")
 # Rate map (₹ per sqft)
 rate_map = {
     "Mumbai": {
-        "Andheri": 35000,
-        "Bandra": 42000,
-        "Borivali": 28000,
-        "Dadar": 38000,
-        "Goregaon": 30000,
-        "Juhu": 45000,
-        "Malad": 29000
+        "Andheri": 35000, "Bandra": 42000, "Borivali": 28000,
+        "Dadar": 38000, "Goregaon": 30000, "Juhu": 45000, "Malad": 29000
     },
     "Pune": {
-        "Kothrud": 16000,
-        "Hinjewadi": 11000,
-        "Hadapsar": 12000,
-        "Baner": 15000,
-        "Wakad": 13000,
-        "Viman Nagar": 15500,
-        "Kharadi": 14500
+        "Kothrud": 16000, "Hinjewadi": 11000, "Hadapsar": 12000,
+        "Baner": 15000, "Wakad": 13000, "Viman Nagar": 15500, "Kharadi": 14500
     },
     "Nagpur": {
-        "Dharampeth": 9500,
-        "Manish Nagar": 8500,
-        "Sitabuldi": 8000,
-        "Trimurti Nagar": 8200
+        "Dharampeth": 9500, "Manish Nagar": 8500, "Sitabuldi": 8000, "Trimurti Nagar": 8200
     },
     "Nashik": {
-        "Canada Corner": 10000,
-        "Gangapur Road": 10500,
-        "Indira Nagar": 9500,
-        "Panchavati": 8700
+        "Canada Corner": 10000, "Gangapur Road": 10500, "Indira Nagar": 9500, "Panchavati": 8700
     },
     "Solapur": {
-        "Hotgi Road": 6000,
-        "Akkalkot Road": 6200,
-        "Shelgi": 5800,
-        "Railway Lines": 6300
+        "Hotgi Road": 6000, "Akkalkot Road": 6200, "Shelgi": 5800, "Railway Lines": 6300
     },
     "Aurangabad": {
-        "CIDCO": 9000,
-        "Garkheda": 8800,
-        "Shahganj": 8600,
-        "Osmanpura": 9100
+        "CIDCO": 9000, "Garkheda": 8800, "Shahganj": 8600, "Osmanpura": 9100
     }
 }
 
@@ -130,7 +108,7 @@ area_sqft = st.slider("📏 Enter Property Area (in sqft)", 300, 5000, 1000)
 rate_per_sqft = rate_map[district][area]
 estimated_price = rate_per_sqft * area_sqft
 
-# Result
+# Show result
 if st.button("💡 Estimate Price"):
     st.success(f"🏷️ **Rate**: ₹{rate_per_sqft:,} per sqft")
     st.success(f"💰 **Estimated Property Price in {area}, {district}**: ₹{estimated_price:,.0f}")
