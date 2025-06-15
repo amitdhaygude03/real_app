@@ -1,9 +1,8 @@
 import streamlit as st
 
-# Custom styles: All text bold, very dark black, increased size, styled title
+# Custom styles
 st.markdown("""
 <style>
-/* Background image */
 body {
     background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be');
     background-size: cover;
@@ -12,9 +11,8 @@ body {
     background-repeat: no-repeat;
 }
 
-/* App container */
 .stApp {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
@@ -24,7 +22,6 @@ body {
     font-size: 20px;
 }
 
-/* Title styling */
 h1, .stApp h1 {
     font-size: 3rem !important;
     color: #000000 !important;
@@ -34,14 +31,12 @@ h1, .stApp h1 {
     text-shadow: 1px 1px 2px #999 !important;
 }
 
-/* Labels and inputs */
 label, .stSlider label, .stSelectbox label, .stTextInput label {
     color: #000000;
     font-weight: bold;
     font-size: 20px;
 }
 
-/* Buttons */
 .stButton>button {
     background-color: #ffc107;
     color: #000000;
@@ -57,7 +52,6 @@ label, .stSlider label, .stSelectbox label, .stTextInput label {
     background-color: #e0a800;
 }
 
-/* Output text */
 .stMarkdown > div {
     font-size: 22px;
     font-weight: bold;
@@ -96,10 +90,25 @@ rate_map = {
     },
     "Aurangabad": {
         "CIDCO": 9000, "Garkheda": 8800, "Shahganj": 8600, "Osmanpura": 9100
+    },
+    "Satara": {
+        "Raviwar Peth": 7000, "Godoli": 6800, "Koregaon": 7200, "Shivaji Nagar": 7500, "Yadogopal Peth": 6900
+    },
+    "Kolhapur": {
+        "Rajarampuri": 9000, "Tarabai Park": 8800, "Udyamnagar": 8500, "Shivaji Peth": 8700, "Kasba Bawada": 8400
+    },
+    "Sangli": {
+        "Vishrambag": 7500, "Miraj": 7000, "Madhavnagar": 7200, "Gaonbhag": 7100, "Kupwad": 7300
+    },
+    "Baramati": {
+        "MIDC": 8000, "Bhigwan Road": 7700, "Patil Nagar": 7500, "Kasba": 7900, "Market Yard": 7600
+    },
+    "Phaltan": {
+        "Rajale Nagar": 6500, "MIDC Phaltan": 6700, "Datta Nagar": 6400, "Baradgaon": 6600, "Ravi Nagar": 6550
     }
 }
 
-# User inputs
+# User input
 district = st.selectbox("📍 Select District", sorted(rate_map.keys()))
 area = st.selectbox("🏘️ Select Area", sorted(rate_map[district].keys()))
 area_sqft = st.slider("📏 Enter Property Area (in sqft)", 300, 5000, 1000)
