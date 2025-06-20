@@ -1,4 +1,4 @@
-🏠 Maharashtra Real Estate Price Estimator using Streamlit
+🏠 Maharashtra Real Estate Price Estimator 
 
 App Link:https://realapp-vansh.streamlit.app/
 
